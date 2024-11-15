@@ -92,15 +92,15 @@ return {
 				},
 				mapping = mapping,
 				formatting = {
-					fields = { 'kind', 'abbr', 'menu' },
-					format = function(entry, vim_item)
-						local kind = lspkind.cmp_format({ mode = 'symbol_text', maxwidth = 50 })(entry, vim_item)
-						local strings = vim.split(kind.kind, '%s', { trimempty = true })
-						kind.kind = " " .. (strings[1] or "") .. " "
-						kind.menu = "		(" .. (strings[2] or "") .. ")"
-
-						return kind
-					end,
+					format = lspkind.cmp_format({
+						mode = 'symbol_text',
+						menu = ({
+							buffer = '[Buffer]',
+							nvim_lsp = '[LSP]',
+							luasnip = '[LuaSnip]',
+							nvim_lua = '[Lua]',
+						}),
+					}),
 				},
 				view = {
 					entries = { name = 'custom', selection_order = 'near_cursor' },
