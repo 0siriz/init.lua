@@ -69,6 +69,18 @@ return {
 			require('mason').setup()
 
 			require('mason-lspconfig').setup({
+				ensure_installed = {
+					'bashls',
+					'clangd',
+					'csharp_ls',
+					'docker_compose_language_service',
+					'dockerls',
+					'gopls',
+					'html',
+					'lua_ls',
+					'pylsp',
+					'ts_ls',
+				},
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
