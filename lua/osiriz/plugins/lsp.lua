@@ -72,7 +72,6 @@ return {
 				ensure_installed = {
 					'bashls',
 					'clangd',
-					'csharp_ls',
 					'docker_compose_language_service',
 					'dockerls',
 					'gopls',
