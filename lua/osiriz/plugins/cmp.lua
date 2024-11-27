@@ -12,6 +12,7 @@ return {
 			'hrsh7th/cmp-cmdline',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-emoji',
+			'lukas-reineke/cmp-under-comparator',
 			'onsails/lspkind.nvim',
 			'windwp/nvim-autopairs',
 		},
@@ -89,6 +90,16 @@ return {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
 					end,
+				},
+				sorting = {
+					comparators = {
+						cmp.config.compare.offset,
+						cmp.config.compare.exact,
+						cmp.config.compare.score,
+						cmp.config.compare.recently_used,
+						require('cmp-under-comparator').under,
+						cmp.config.compare.kind,
+					},
 				},
 				mapping = mapping,
 				formatting = {
