@@ -3,7 +3,6 @@ return {
 		'b0o/incline.nvim',
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
-			'SmiteshP/nvim-navic',
 		},
 		event = { 'VeryLazy' },
 		opts = {
@@ -21,18 +20,9 @@ return {
 				local res = {
 					ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = require('incline.helpers').contrast_color(ft_color) } or '',
 					' ',
-					{ filename, gui = modified and 'bold,italic' or 'bold' },
+					{ filename, gui = modified and 'italic' or nil },
+					' '
 				}
-				if props.focused then
-					for _, item in ipairs(require('nvim-navic').get_data(props.buf) or {}) do
-						table.insert(res, {
-							{ ' > ', group = 'NavicSeparator' },
-							{ item.icon, group = 'NavicIcons' .. item.type },
-							{ item.name, group = 'NavicText' },
-						})
-					end
-				end
-				table.insert(res, ' ')
 				return res
 			end,
 		},

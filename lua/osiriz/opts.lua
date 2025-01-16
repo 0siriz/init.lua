@@ -13,11 +13,16 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 vim.diagnostic.config({
-	signs = false,
-	underline = true,
-	virtual_text = {
-		spacing = 1,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = '󰅚',
+			[vim.diagnostic.severity.WARN] = '󰀪',
+			[vim.diagnostic.severity.INFO] = '󰋽',
+			[vim.diagnostic.severity.HINT] = '󰌶',
+		}
 	},
+	underline = true,
+	virtual_text = false,
 })
 
 vim.cmd.colorscheme('rose-pine')
