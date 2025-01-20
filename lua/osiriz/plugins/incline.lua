@@ -1,10 +1,10 @@
 return {
 	{
 		'b0o/incline.nvim',
+		event = { 'VeryLazy' },
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 		},
-		event = { 'VeryLazy' },
 		opts = {
 			window = {
 				padding = 0,

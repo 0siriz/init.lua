@@ -1,18 +1,18 @@
 vim.keymap.set(
 	{'n', 'v'},
-	'<leader>df',
+	'<leader>xf',
 	vim.diagnostic.open_float,
-	{ desc = '[D]iagnostics [F]loat' }
+	{ desc = '[X] Diagnostics [F]loat' }
 )
 vim.keymap.set(
 	'n',
-	'<leader>dn',
+	'<leader>xn',
 	vim.diagnostic.goto_next,
-	{ desc = '[D]iagnostics Goto [N]ext' }
+	{ desc = '[X] Diagnostics Goto [N]ext' }
 )
 vim.keymap.set(
 	'n',
-	'<leader>dp',
+	'<leader>xp',
 	vim.diagnostic.goto_prev,
-	{ desc = '[D]iagnostics Goto [P]revious' }
+	{ desc = '[X] Diagnostics Goto [P]revious' }
 )
