@@ -11,7 +11,8 @@ return {
 					providers = {
 						{ 'Diagnostics', require('hovercraft.provider.diagnostics').new() },
 						{ 'LSP', require('hovercraft.provider.lsp.hover').new() },
-						{ 'Git Blame', require('hovercraft.provider.git.blame').new() }
+						{ 'Man', require('hovercraft.provider.man').new() },
+						{ 'Git Blame', require('hovercraft.provider.git.blame').new() },
 					}
 				},
 
