@@ -1,24 +1,41 @@
 return {
 	{
-		'lewis6991/hover.nvim',
+		'patrickpichler/hovercraft.nvim',
+		dependencies = {
+			'nvim-lua/plenary.nvim'
+		},
 		event = { 'VeryLazy' },
 		config = function()
-			require('hover').setup({
-				init = function()
-					require('hover.providers.lsp')
-					require('hover.providers.diagnostic')
-				end,
-				preview_opts = {
+			require('hovercraft').setup({
+				providers = {
+					providers = {
+						{ 'Diagnostics', require('hovercraft.provider.diagnostics').new() },
+						{ 'LSP', require('hovercraft.provider.lsp.hover').new() },
+						{ 'Git Blame', require('hovercraft.provider.git.blame').new() }
+					}
+				},
+
+				window = {
 					border = 'single',
 				},
-				preview_window = false,
-				title = true,
+
+				keys = {
+					{ '<C-b>', function() require('hovercraft').scroll({ delta = -4 }) end },
+					{ '<C-f>', function() require('hovercraft').scroll({ delta = 4 }) end },
+					{ '<tab>', function() require('hovercraft').hover_next() end },
+					{ '<S-tab>', function() require('hovercraft').hover_next({ step = -1 }) end },
+				},
 			})
 
-			vim.keymap.set('n', 'K', require('hover').hover, { desc = 'hover' })
-			vim.keymap.set('n', 'gK', require('hover').hover_select, { desc = 'hover (select)' })
-			vim.keymap.set('n', '<C-p>', function() require('hover').hover_switch('previous') end, { desc = 'hover (previous)' })
-			vim.keymap.set('n', '<C-n>', function() require('hover').hover_switch('next') end, { desc = 'hover (next)' })
+			vim.keymap.set('n', 'K', function()
+				local hovercraft = require('hovercraft')
+
+				if hovercraft.is_visible() then
+					hovercraft.enter_popup()
+				else
+					hovercraft.hover()
+				end
+			end, { desc = 'Hover' })
 		end,
 	},
 }
