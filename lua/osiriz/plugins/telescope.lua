@@ -22,13 +22,6 @@ return {
 					fzf = {
 						fuzzy = true,
 					},
-					resession = {
-						prompt_title = 'Find Session',
-						dir = 'session',
-						path_substitutions = {
-							{ find = '^' .. vim.env.HOME, replace = '~' },
-						}
-					}
 				},
 			})
 
@@ -40,7 +33,6 @@ return {
 			vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 			vim.keymap.set('n', '<leader>sm', builtin.man_pages, { desc = '[S]earch [M]an pages' })
 			vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostic' })
-			vim.keymap.set('n', '<leader>ss', telescope.extensions.resession.resession, { desc = '[S]earch [S]essions' })
 		end
 	},
 }
