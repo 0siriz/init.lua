@@ -4,9 +4,8 @@ return {
 		dependencies = {
 			'nvim-lua/plenary.nvim'
 		},
-		event = { 'VeryLazy' },
-		config = function()
-			require('hovercraft').setup({
+		opts = function()
+			return {
 				providers = {
 					providers = {
 						{ 'Diagnostics', require('hovercraft.provider.diagnostics').new() },
@@ -26,17 +25,21 @@ return {
 					{ '<tab>', function() require('hovercraft').hover_next() end },
 					{ '<S-tab>', function() require('hovercraft').hover_next({ step = -1 }) end },
 				},
-			})
-
-			vim.keymap.set('n', 'K', function()
-				local hovercraft = require('hovercraft')
-
-				if hovercraft.is_visible() then
-					hovercraft.enter_popup()
-				else
-					hovercraft.hover()
-				end
-			end, { desc = 'Hover' })
+			}
 		end,
+		keys = {
+			{
+				'K',
+				function()
+					local hovercraft = require('hovercraft')
+					if hovercraft.is_visible() then
+						hovercraft.enter_popup()
+					else
+						hovercraft.hover()
+					end
+				end,
+				desc = 'Hover',
+			},
+		},
 	},
 }

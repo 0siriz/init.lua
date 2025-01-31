@@ -2,7 +2,6 @@ return {
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.8',
-		event = { 'VeryLazy' },
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			'nvim-tree/nvim-web-devicons',
@@ -11,28 +10,21 @@ return {
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release',
 			},
-			'scottmckendry/telescope-resession.nvim',
 		},
-		config = function()
-			local telescope = require('telescope')
-			local builtin = require('telescope.builtin')
-
-			telescope.setup({
-				extensions = {
-					fzf = {
-						fuzzy = true,
-					},
+		opts = {
+			extensions = {
+				fzf = {
+					fuzzy = true,
 				},
-			})
-
-			telescope.load_extension('fzf')
-
-			vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-			vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-			vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-			vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-			vim.keymap.set('n', '<leader>sm', builtin.man_pages, { desc = '[S]earch [M]an pages' })
-			vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostic' })
-		end
+			},
+		},
+		keys = {
+			{ '<leader>?', function() require('telescope.builtin').oldfiles() end, desc = '[?] Find recently opened files' },
+			{ '<leader><space>', function() require('telescope.builtin').buffers() end, desc = '[ ] Find existing buffers' },
+			{ '<leader>sf', function() require('telescope.builtin').find_files() end, desc = '[S]earch [F]iles' },
+			{ '<leader>sh', function() require('telescope.builtin').help_tags() end, desc = '[S]earch [H]elp' },
+			{ '<leader>sm', function() require('telescope.builtin').man_pages() end, desc = '[S]earch [M]an pages' },
+			{ '<leader>sd', function() require('telescope.builtin').diagnostics() end, desc = '[S]earch [D]iagnostic' },
+		},
 	},
 }
