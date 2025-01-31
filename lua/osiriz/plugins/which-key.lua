@@ -16,7 +16,6 @@ return {
 					{ '<leader>r', desc = '[R]ename' },
 					{ '<leader>s', desc = '[S]earch' },
 					{ '<leader>w', desc = '[W]orkspace' },
-					{ '<leader>p', desc = '[P]ersistence' },
 				}
 			}
 		},
