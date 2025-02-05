@@ -1,8 +1,12 @@
 return {
 	{
 		'j-hui/fidget.nvim',
-		tag = 'v1.5.0',
+		tag = 'v1.6.0',
 		event = { 'VeryLazy' },
-		opts = {}
+		opts = {
+			notification = {
+				override_vim_notify = true,
+			},
+		},
 	},
 }
