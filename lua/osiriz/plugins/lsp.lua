@@ -7,7 +7,7 @@ return {
 			'williamboman/mason-lspconfig.nvim',
 			'neovim/nvim-lspconfig',
 			'hrsh7th/cmp-nvim-lsp',
-			'aznhe21/actions-preview.nvim',
+			{ 'rachartier/tiny-code-action.nvim', opts = { backend = 'vim' } },
 			{ 'folke/neodev.nvim', opts = {} },
 		},
 		config = function()
@@ -26,7 +26,7 @@ return {
 					map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 					map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 					map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-					map('<leader>ca', require('actions-preview').code_actions, '[C]ode [A]ction', { 'n', 'x' })
+					map('<leader>ca', require('tiny-code-action').code_action, '[C]ode [A]ction')
 					map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 				end
 			})

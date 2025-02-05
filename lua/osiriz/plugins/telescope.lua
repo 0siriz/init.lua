@@ -25,6 +25,7 @@ return {
 			{ '<leader>sh', function() require('telescope.builtin').help_tags() end, desc = '[S]earch [H]elp' },
 			{ '<leader>sm', function() require('telescope.builtin').man_pages() end, desc = '[S]earch [M]an pages' },
 			{ '<leader>sd', function() require('telescope.builtin').diagnostics() end, desc = '[S]earch [D]iagnostic' },
+			{ '<leader>sg', function() require('telescope.builtin').live_grep() end, desc = '[S]earch Live [G]rep' },
 		},
 	},
 }
