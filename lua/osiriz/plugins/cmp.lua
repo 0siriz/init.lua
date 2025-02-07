@@ -75,7 +75,7 @@ return {
 					i = cmp.mapping.scroll_docs(-4),
 				}),
 				['<C-f>'] = cmp.mapping({
-				i = cmp.mapping.scroll_docs(4),
+					i = cmp.mapping.scroll_docs(4),
 				}),
 			}
 
