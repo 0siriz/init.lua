@@ -9,6 +9,7 @@ return {
 		opts = {
 			spec = {
 				{
+					{ '<leader>a', desc = 'Gr[a]pple' },
 					{ '<leader>c', desc = '[C]ode', mode = { 'n', 'x' } },
 					{ '<leader>d', desc = '[D]ocument' },
 					{ '<leader>g', desc = '[G]it', mode = { 'n', 'x' }},
