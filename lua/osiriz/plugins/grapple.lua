@@ -1,6 +1,7 @@
 return {
 	{
 		'cbochs/grapple.nvim',
+		event = { 'VeryLazy' },
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 		},
