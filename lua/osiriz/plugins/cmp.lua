@@ -35,7 +35,7 @@ return {
 						if cmp.visible() and cmp.get_active_entry() then
 							cmp.confirm({
 								behavior = cmp.ConfirmBehavior.Replace,
-								select = true,
+								select = false,
 							})
 						else
 							fallback()
@@ -116,6 +116,7 @@ return {
 				view = {
 					entries = { name = 'custom', selection_order = 'near_cursor' },
 				},
+				preselect = 'None',
 			})
 			cmp.setup.cmdline(':', {
 				sources = {
