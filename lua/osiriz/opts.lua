@@ -2,6 +2,7 @@ vim.opt.showmode = false
 vim.opt.cursorline = true
 vim.opt.breakindent = true
 vim.opt.undofile = true
+vim.opt.mouse = ''
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
