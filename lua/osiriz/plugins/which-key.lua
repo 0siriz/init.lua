@@ -8,15 +8,9 @@ return {
 		},
 		opts = {
 			spec = {
-				{
-					{ '<leader>a', desc = 'Gr[a]pple' },
-					{ '<leader>c', desc = '[C]ode', mode = { 'n', 'x' } },
-					{ '<leader>d', desc = '[D]ocument' },
-					{ '<leader>g', desc = '[G]it', mode = { 'n', 'x' }},
-					{ '<leader>r', desc = '[R]ename' },
-					{ '<leader>s', desc = '[S]earch' },
-					{ '<leader>w', desc = '[W]orkspace' },
-				}
+				{ '<leader>f', group = 'Find' },
+				{ '<leader>s', group = 'Search' },
+				{ '<leader>g', group = 'Git' },
 			}
 		},
 	},

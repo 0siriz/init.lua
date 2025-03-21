@@ -7,6 +7,7 @@ vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
 vim.opt.fillchars = { eob = ' ' }
+vim.opt.cmdheight = 0
 
 vim.wo.number = true
 

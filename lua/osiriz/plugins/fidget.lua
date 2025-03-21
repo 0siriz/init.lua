@@ -8,8 +8,5 @@ return {
 				override_vim_notify = true,
 			},
 		},
-		keys = {
-			{ '<leader>sn', function() require('telescope').extensions.fidget.fidget() end, desc = '[S]earch [N]otifications' },
-		},
 	},
 }
