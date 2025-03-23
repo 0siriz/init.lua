@@ -4,11 +4,17 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
+			explorer = {
+				enabled = true,
+				replace_netrw = true
+			},
 			input = { enabled = true },
 			scroll = { enabled = true },
 			picker = { enabled = true },
 		},
 		keys = {
+			-- Explorer
+			{ '<leader>e', function() Snacks.explorer() end, desc = 'File Explorer' },
 			-- Find
 			{ '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Find Buffers' },
 			{ '<leader>ff', function() Snacks.picker.files() end, desc = 'Find Files' },

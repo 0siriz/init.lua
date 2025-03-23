@@ -11,6 +11,8 @@ return {
 				{ '<leader>f', group = 'Find' },
 				{ '<leader>s', group = 'Search' },
 				{ '<leader>g', group = 'Git' },
+				{ '<leader>c', group = 'Code' },
+				{ '<leader>r', group = 'Rename' },
 			}
 		},
 	},
