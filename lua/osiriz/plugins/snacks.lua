@@ -15,19 +15,25 @@ return {
 						{ icon = '󰒲 ', key = 'L', desc = 'Lazy', action = function() require('lazy').home() end, enabled = package.loaded.lazy ~= nil },
 						{ icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
 					},
-					header = [[
- ██████╗ ███████╗██╗██████╗ ██╗███████╗
-██╔═══██╗██╔════╝██║██╔══██╗██║╚══███╔╝
-██║   ██║███████╗██║██████╔╝██║  ███╔╝ 
-██║   ██║╚════██║██║██╔══██╗██║ ███╔╝  
-╚██████╔╝███████║██║██║  ██║██║███████╗
- ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═╝╚═╝╚══════╝
-					]],
+					header = table.concat({
+						[[   █  █   ]],
+						[[   █ ██   ]],
+						[[   ████   ]],
+						[[   ██ ███   ]],
+						[[   █  █   ]],
+						[[             ]],
+						[[ n e o v i m ]],
+					}, '\n'),
 				},
 				sections = {
 					{ section = 'header' },
-					{ section = 'keys', gap = 1, padding = 1 },
-					{ icon = ' ', title = 'Recent Files', section = 'recent_files', cwd = true, indent = 2, padding = 1 },
+					{ section = 'keys', gap = 1, padding = { 1, 0 } },
+					{ icon = ' ', title = 'Recent Files', padding = { 0, 1 }, enabled = function()
+						return vim.o.lines >= 32
+					end },
+					{ section = 'recent_files', cwd = true, indent = 2, padding = { 1, 0 }, enabled = function()
+						return vim.o.lines >= 32
+					end },
 					{ section = 'startup' },
 				},
 			},
