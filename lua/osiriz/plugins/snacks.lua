@@ -27,15 +27,9 @@ return {
 				},
 				sections = {
 					{ section = 'header', enabled = function()
-						return vim.o.lines >= 28
-					end },
-					{ section = 'keys', gap = 1, padding = { 1, 0 } },
-					{ icon = ' ', title = 'Recent Files', padding = { 0, 1 }, enabled = function()
-						return vim.o.lines >= 35
-					end },
-					{ section = 'recent_files', cwd = true, indent = 2, padding = { 1, 0 }, enabled = function()
-						return vim.o.lines >= 35
-					end },
+							return vim.o.lines >= 28
+						end },
+					{ section = 'keys', gap = 1, padding = 1 },
 					{ section = 'startup' },
 				},
 			},
