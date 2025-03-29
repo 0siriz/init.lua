@@ -18,6 +18,20 @@ return {
 				lineFoldingOnly = true,
 			}
 
+			vim.diagnostic.config({
+				underline = true,
+				virtual_text = false,
+				virtual_lines = false,
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = ' ',
+						[vim.diagnostic.severity.WARN] = ' ',
+						[vim.diagnostic.severity.HINT] = ' ',
+						[vim.diagnostic.severity.INFO] = ' ',
+					}
+				}
+			})
+
 			local servers = {
 				ts_ls = {
 					init_options = {
@@ -64,7 +78,12 @@ return {
 		end,
 		keys = {
 			{ '<leader>rn', vim.lsp.buf.rename, desc = 'Rename' },
-			{ '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action' }
+			{ '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action' },
+			{ '<leader>l', function()
+					vim.diagnostic.config({
+						virtual_lines = not vim.diagnostic.config().virtual_lines
+					})
+				end, desc = 'Toggle Virtual Lines' },
 		}
 	},
 }

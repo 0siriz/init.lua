@@ -19,6 +19,7 @@ return {
 				changedelte = { text = '▎' },
 			},
 			signcolumn = true,
+			sign_priority = 100,
 			numhl = false,
 			on_attach = function(bufnr)
 				local gitsigns = require('gitsigns')
