@@ -38,7 +38,9 @@ return {
 			vim.diagnostic.config({
 				underline = true,
 				virtual_text = false,
-				virtual_lines = false,
+				virtual_lines = {
+					current_line = true,
+				},
 				signs = {
 					text = {
 						[vim.diagnostic.severity.ERROR] = ' ',
@@ -96,11 +98,6 @@ return {
 		keys = {
 			{ '<leader>rn', vim.lsp.buf.rename, desc = 'Rename' },
 			{ '<leader>ca', vim.lsp.buf.code_action, desc = 'Code Action' },
-			{ '<leader>l', function()
-					vim.diagnostic.config({
-						virtual_lines = not vim.diagnostic.config().virtual_lines
-					})
-				end, desc = 'Toggle Virtual Lines' },
 		}
 	},
 }
