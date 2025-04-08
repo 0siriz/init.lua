@@ -23,22 +23,3 @@ vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'CmdlineEn
 		end
 	end
 })
-
--- Cmd Height
-local cmdheightgroup = vim.api.nvim_create_augroup('cmdheight', {})
-
-vim.api.nvim_create_autocmd({ 'CmdlineEnter', 'RecordingEnter' }, {
-	pattern = '*',
-	group = cmdheightgroup,
-	callback = function()
-		vim.opt.cmdheight = 1
-	end
-})
-
-vim.api.nvim_create_autocmd({ 'CmdlineLeave', 'RecordingLeave' }, {
-	pattern = '*',
-	group = cmdheightgroup,
-	callback = function()
-		vim.opt.cmdheight = 0
-	end
-})
