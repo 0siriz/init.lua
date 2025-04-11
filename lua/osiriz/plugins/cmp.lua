@@ -14,18 +14,11 @@ return {
 			'hrsh7th/cmp-emoji',
 			'lukas-reineke/cmp-under-comparator',
 			'onsails/lspkind.nvim',
-			'windwp/nvim-autopairs',
 		},
 		config = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
 			local lspkind = require('lspkind')
-			local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-
-			cmp.event:on(
-				'confirm_done',
-				cmp_autopairs.on_confirm_done()
-			)
 
 			require('luasnip.loaders.from_vscode').lazy_load()
 
