@@ -9,7 +9,6 @@ return {
 				providers = {
 					providers = {
 						{ 'LSP', require('hovercraft.provider.lsp.hover').new() },
-						{ 'Man', require('hovercraft.provider.man').new() },
 						{ 'Git Blame', require('hovercraft.provider.git.blame').new() },
 					}
 				},
