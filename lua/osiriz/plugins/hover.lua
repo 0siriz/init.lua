@@ -22,6 +22,7 @@ return {
 					{ '<C-u>', function() require('hovercraft').scroll({ delta = -4 }) end },
 					{ '<tab>', function() require('hovercraft').hover_next() end },
 					{ '<S-tab>', function() require('hovercraft').hover_next({ step = -1 }) end },
+					{ 'q', function() require('hovercraft').close() end },
 				},
 			}
 		end,
