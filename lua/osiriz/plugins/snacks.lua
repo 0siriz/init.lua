@@ -41,6 +41,15 @@ return {
 			scroll = { enabled = true },
 			picker = {
 				enabled = true,
+				sources = {
+					explorer = {
+						layout = {
+							layout = {
+								position = 'right',
+							},
+						},
+					},
+				},
 				win = {
 					input = {
 						keys = {
