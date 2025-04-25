@@ -1,8 +1,8 @@
 return {
-	{
-		'lukas-reineke/indent-blankline.nvim',
-		main = 'ibl',
-		event = { 'VeryLazy' },
-		opts = {},
-	},
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    event = { 'VeryLazy' },
+    opts = {},
+  },
 }
