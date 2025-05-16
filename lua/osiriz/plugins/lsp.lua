@@ -7,7 +7,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'neovim/nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
-      { 'folke/neodev.nvim', opts = {} },
+      { 'folke/lazydev.nvim', opts = {} },
     },
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
