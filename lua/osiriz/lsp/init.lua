@@ -20,8 +20,9 @@ capabilities.textDocument.foldingRange = {
   lineFoldingOnly = true,
 }
 
+vim.lsp.config('*', { capabilities = capabilities })
+
 for name, config in pairs(configs) do
-  config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
   vim.lsp.config(name, config)
   table.insert(servers, name)
 end
