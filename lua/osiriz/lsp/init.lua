@@ -12,15 +12,16 @@ local configs = {
 
 local servers = {}
 
--- TODO: See if there is a smart way to do this
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-
-vim.lsp.config('*', { capabilities = capabilities })
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
+    }
+  }
+})
 
 for name, config in pairs(configs) do
   vim.lsp.config(name, config)

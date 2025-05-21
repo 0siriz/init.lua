@@ -11,25 +11,23 @@ local packages = {
 }
 
 local function install(pack, version)
-  local notifyOpts = { group = 'mason', key = pack.name }
-
   local install_msg = version and ('[%s] installing version %s...'):format(pack.name, version)
         or ('[%s] installing...'):format(pack.name)
   vim.defer_fn(function()
-    vim.notify(install_msg, vim.log.levels.INFO, notifyOpts)
+    vim.notify(install_msg, vim.log.levels.INFO, { group = 'mason', key = pack.name, ttl = math.huge })
   end, 0)
 
   pack:once('install:success', function()
     local success_msg = ('[%s] installed'):format(pack.name)
     vim.defer_fn(function()
-      vim.notify(success_msg, vim.log.levels.INFO, notifyOpts)
+      vim.notify(success_msg, vim.log.levels.INFO, { group = 'mason', key = pack.name, ttl = 0 })
     end, 0)
   end)
 
   pack:once('install:failed', function()
-    local error_msg = ('Failed to install [%s]'):format(pack.name)
+    local error_msg = ('[%s] Failed to install'):format(pack.name)
     vim.defer_fn(function()
-      vim.notify(error_msg, vim.log.levels.ERROR, notifyOpts)
+      vim.notify(error_msg, vim.log.levels.ERROR, { group = 'mason', key = pack.name, ttl = 0 })
     end, 0)
   end)
 
@@ -37,24 +35,22 @@ local function install(pack, version)
 end
 
 local function update(pack, version)
-  local notifyOpts = { group = 'mason', key = pack.name }
-
   local update_msg = ('[%s] updating to version %s...'):format(pack.name, version)
   vim.defer_fn(function()
-    vim.notify(update_msg, vim.log.levels.INFO, notifyOpts)
+    vim.notify(update_msg, vim.log.levels.INFO, { group = 'mason', key = pack.name, ttl = math.huge })
   end, 0)
 
   pack:once('install:success', function()
     local success_msg = ('[%s] updated'):format(pack.name)
     vim.defer_fn(function()
-      vim.notify(success_msg, vim.log.levels.INFO, notifyOpts)
+      vim.notify(success_msg, vim.log.levels.INFO, { group = 'mason', key = pack.name, ttl = 0 })
     end, 0)
   end)
 
   pack:once('install:failed', function()
-    local error_msg = ('Failed to update [%s]'):format(pack.name)
+    local error_msg = ('[%s] Failed to update'):format(pack.name)
     vim.defer_fn(function()
-      vim.notify(error_msg, vim.log.levels.ERROR, notifyOpts)
+      vim.notify(error_msg, vim.log.levels.ERROR, { group = 'mason', key = pack.name, ttl = 0 })
     end, 0)
   end)
 
@@ -94,7 +90,7 @@ local function syncPackages(ensurePacks)
         masonReg.get_package(packName):uninstall()
         local uninstall_msg = ('[%s] uninstalled'):format(packName)
         vim.defer_fn(function()
-          vim.notify(uninstal_msg, nil, { group = 'mason' })
+          vim.notify(uninstall_msg, nil, { group = 'mason' })
         end, 0)
       end
     end)
