@@ -92,6 +92,10 @@ return {
       { '<leader>ff', function() Snacks.picker.files() end, desc = 'Find Files' },
       { '<leader>fg', function() Snacks.picker.git_files() end, desc = 'Find Git Files' },
       { '<leader>fr', function() Snacks.picker.recent() end, desc = 'Find Recent Files' },
+      -- Grep
+      { '<leader>sb', function() Snacks.picker.lines() end, desc = 'Buffer Lines' },
+      { '<leader>sB', function() Snacks.picker.grep_buffers() end, desc = 'Grep Open Buffers' },
+      { '<leader>sg', function() Snacks.picker.grep() end, desc = 'Grep' },
       -- LSP
       { 'gd', function() Snacks.picker.lsp_definitions() end, desc = 'Goto Definition' },
       { 'gD', function() Snacks.picker.lsp_declarations() end, desc = 'Goto Declaration' },
