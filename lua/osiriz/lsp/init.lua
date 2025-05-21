@@ -12,17 +12,6 @@ local configs = {
 
 local servers = {}
 
-vim.lsp.config('*', {
-  capabilities = {
-    textDocument = {
-      foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true,
-      }
-    }
-  }
-})
-
 for name, config in pairs(configs) do
   vim.lsp.config(name, config)
   table.insert(servers, name)
