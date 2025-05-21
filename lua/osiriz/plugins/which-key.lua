@@ -13,6 +13,7 @@ return {
         { '<leader>g', group = 'Git' },
         { '<leader>c', group = 'Code' },
         { '<leader>r', group = 'Rename' },
+        { '<leader>t', group = 'Toggle' },
       }
     },
   },

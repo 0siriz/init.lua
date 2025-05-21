@@ -6,7 +6,13 @@ vim.opt.mouse = ''
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.hlsearch = false
-vim.opt.fillchars = { eob = ' ', fold = ' ' }
+vim.opt.fillchars = {
+  eob = ' ',
+  fold = ' ',
+  foldopen = '󰅀',
+  foldclose = '󰅂',
+  foldsep = '│',
+}
 vim.opt.signcolumn = 'auto:2'
 
 vim.o.foldenable = true
