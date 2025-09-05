@@ -43,6 +43,7 @@ return {
       },
       input = { enabled = true },
       scroll = { enabled = true },
+      indent = { enabled = true },
       picker = {
         enabled = true,
         sources = {
