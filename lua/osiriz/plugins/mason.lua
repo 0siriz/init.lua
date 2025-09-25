@@ -8,6 +8,7 @@ local packages = {
   'lua-language-server',
   'python-lsp-server',
   'typescript-language-server',
+  'tinymist',
 }
 
 local function install(pack, version)
