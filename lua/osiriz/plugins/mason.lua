@@ -9,6 +9,7 @@ local packages = {
   'python-lsp-server',
   'typescript-language-server',
   'tinymist',
+  'harper-ls',
 }
 
 local function install(pack, version)
