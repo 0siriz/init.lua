@@ -104,6 +104,8 @@ return {
       { 'gI', function() Snacks.picker.lsp_implementations() end, desc = 'Goto Implementaion' },
       { '<leader>ss', function() Snacks.picker.lsp_symbols() end, desc = 'LSP Symbols' },
       { '<leader>sS', function() Snacks.picker.lsp_workspace_symbols() end, desc = 'LSP Workspace Symbols' },
+      -- Diagnostics
+      { '<leader>sd', function() Snacks.picker.diagnostics() end, desc = 'Diagnostics' },
     }
   }
 }
