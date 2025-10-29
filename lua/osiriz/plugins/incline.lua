@@ -26,5 +26,8 @@ return {
         return res
       end,
     },
+    keys = {
+      { '<leader>ti', function() require('incline').toggle() end, desc = 'Toggle incline' }
+    }
   },
 }
