@@ -4,6 +4,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+      bigfile = { enabled = false },
       dashboard = {
         enabled = true,
         preset = {
@@ -41,9 +42,10 @@ return {
         enabled = true,
         replace_netrw = true
       },
+      image = { enabled = false },
       input = { enabled = true },
-      scroll = { enabled = true },
       indent = { enabled = true },
+      notifier = { enabled = false },
       picker = {
         enabled = true,
         sources = {
@@ -84,6 +86,11 @@ return {
           end,
         },
       },
+      quickfile = { enabled = true },
+      scope = { enabled = false },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = false },
+      words = { enabled = false },
     },
     keys = {
       -- Explorer
