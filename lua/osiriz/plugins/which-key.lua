@@ -7,6 +7,7 @@ return {
       'echasnovski/mini.icons',
     },
     opts = {
+      preset = 'modern',
       spec = {
         { '<leader>f', group = 'Find' },
         { '<leader>s', group = 'Search' },
