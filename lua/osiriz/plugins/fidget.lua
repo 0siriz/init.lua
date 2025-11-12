@@ -13,8 +13,6 @@ return {
             ttl = 5,
             group_style = 'Title',
             icon_style = 'Special',
-            group_style = 'Title',
-            icon_style = 'Special',
             annote_style = 'Question',
             debug_style = 'Comment',
             info_style = 'Question',
