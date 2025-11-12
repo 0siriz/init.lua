@@ -5,9 +5,10 @@ return {
     cmd = { 'ConformInfo' },
     opts = {
       formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'isort', 'black' },
-        go = { 'gofmt', 'goimports' },
+        python = { 'isort', 'autopep8' },
+        go = { 'goimports', 'gofmt' },
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
       },
       default_format_opts = {
         lsp_format = 'fallback',
@@ -17,5 +18,5 @@ return {
     keys = {
       { '<leader>cf', function() require('conform').format({ async = true }) end, desc = 'Code Format' },
     },
-  }
+  },
 }

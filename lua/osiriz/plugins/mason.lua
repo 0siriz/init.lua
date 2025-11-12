@@ -9,11 +9,15 @@ local packages = {
   'python-lsp-server',
   'typescript-language-server',
   'tinymist',
+  'isort',
+  'autopep8',
+  'goimports',
+  'clang-format',
 }
 
 local function install(pack, version)
   local install_msg = version and ('[%s] installing version %s...'):format(pack.name, version)
-        or ('[%s] installing...'):format(pack.name)
+      or ('[%s] installing...'):format(pack.name)
   vim.defer_fn(function()
     vim.notify(install_msg, vim.log.levels.INFO, { group = 'mason', key = pack.name, ttl = math.huge })
   end, 0)
