@@ -74,7 +74,7 @@ return {
 
       cmp.setup({
         sources = {
-          { name = 'lazydev', group_index = 0 },
+          { name = 'lazydev',                group_index = 0 },
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
@@ -116,10 +116,10 @@ return {
         sources = {
           { name = 'async_path' },
           {
-              name = 'cmdline',
-              option = {
-                ignore_cmds = { 'Man', '!' }
-              }
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' }
+            }
           },
         },
         mapping = mapping,
@@ -127,7 +127,7 @@ return {
           fields = { 'abbr' },
         },
       })
-      cmp.setup.cmdline('/', {
+      cmp.setup.cmdline({ '/', '?' }, {
         sources = {
           { name = 'buffer' },
         },
