@@ -8,7 +8,7 @@ return {
       return {
         providers = {
           providers = {
-            { 'LSP', require('hovercraft.provider.lsp.hover').new() },
+            { 'LSP',       require('hovercraft.provider.lsp.hover').new() },
             { 'Git Blame', require('hovercraft.provider.git.blame').new() },
           }
         },
@@ -18,9 +18,9 @@ return {
         },
 
         keys = {
-          { '<C-d>', function() require('hovercraft').scroll({ delta = 4 }) end },
-          { '<C-u>', function() require('hovercraft').scroll({ delta = -4 }) end },
-          { '<tab>', function() require('hovercraft').hover_next() end },
+          { '<C-d>',   function() require('hovercraft').scroll({ delta = 4 }) end },
+          { '<C-u>',   function() require('hovercraft').scroll({ delta = -4 }) end },
+          { '<tab>',   function() require('hovercraft').hover_next() end },
           { '<S-tab>', function() require('hovercraft').hover_next({ step = -1 }) end },
         },
       }
