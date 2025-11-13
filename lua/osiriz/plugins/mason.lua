@@ -1,18 +1,20 @@
 local packages = {
+  'autopep8',
   'bash-language-server',
+  'clang-format',
   'clangd',
   'docker-compose-language-service',
   'dockerfile-language-server',
+  'goimports',
   'gopls',
   'html-lsp',
+  'isort',
   'lua-language-server',
   'python-lsp-server',
-  'typescript-language-server',
+  'sqlfmt',
+  'sqlls',
   'tinymist',
-  'isort',
-  'autopep8',
-  'goimports',
-  'clang-format',
+  'typescript-language-server',
 }
 
 local function install(pack, version)

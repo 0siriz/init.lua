@@ -9,6 +9,7 @@ return {
         go = { 'goimports', 'gofmt' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
+        sql = { 'sqlfmt' },
       },
       default_format_opts = {
         lsp_format = 'fallback',
