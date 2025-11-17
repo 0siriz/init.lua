@@ -120,7 +120,18 @@ return {
       { '<leader>gb', function() Snacks.picker.git_branches() end,          desc = 'Git Branches' },
       { '<leader>gl', function() Snacks.picker.git_log() end,               desc = 'Git Log' },
       -- Marks
-      { '<leader>sm', function() Snacks.picker.marks() end,                 desc = 'Marks' },
+      {
+        '<leader>sm',
+        function()
+          Snacks.picker.marks({
+            transform = function(item, _)
+              return string.match(item.label, '[a-zA-Z]') ~= nil
+            end
+          })
+        end,
+        desc = 'Marks'
+      },
+      { '<leader>sM', function() Snacks.picker.marks() end, desc = 'All Marks' }
     }
   }
 }
