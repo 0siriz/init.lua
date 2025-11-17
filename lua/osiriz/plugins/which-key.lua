@@ -9,11 +9,12 @@ return {
     opts = {
       preset = 'modern',
       spec = {
-        { '<leader>f', group = 'Find' },
-        { '<leader>s', group = 'Search' },
-        { '<leader>g', group = 'Git' },
         { '<leader>c', group = 'Code' },
+        { '<leader>f', group = 'Find' },
+        { '<leader>g', group = 'Git' },
+        { '<leader>m', group = 'Marlin' },
         { '<leader>r', group = 'Rename' },
+        { '<leader>s', group = 'Search' },
         { '<leader>t', group = 'Toggle' },
       }
     },
