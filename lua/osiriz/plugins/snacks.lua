@@ -92,17 +92,17 @@ return {
       quickfile = { enabled = true },
       scope = { enabled = false },
       scroll = { enabled = true },
-      statuscolumn = { enabled = false },
+      statuscolumn = { enabled = true },
       words = { enabled = false },
     },
     keys = {
       -- Explorer
       { '<leader>e',  function() Snacks.explorer() end,                     desc = 'File Explorer' },
       -- Find
-      { '<leader>fb', function() Snacks.picker.buffers() end,               desc = 'Find Buffers' },
-      { '<leader>ff', function() Snacks.picker.files() end,                 desc = 'Find Files' },
-      { '<leader>fg', function() Snacks.picker.git_files() end,             desc = 'Find Git Files' },
-      { '<leader>fr', function() Snacks.picker.recent() end,                desc = 'Find Recent Files' },
+      { '<leader>fb', function() Snacks.picker.buffers() end,               desc = 'Buffers' },
+      { '<leader>ff', function() Snacks.picker.files() end,                 desc = 'Files' },
+      { '<leader>fg', function() Snacks.picker.git_files() end,             desc = 'Git Files' },
+      { '<leader>fr', function() Snacks.picker.recent() end,                desc = 'Recent Files' },
       -- Grep
       { '<leader>sb', function() Snacks.picker.lines() end,                 desc = 'Buffer Lines' },
       { '<leader>sB', function() Snacks.picker.grep_buffers() end,          desc = 'Grep Open Buffers' },
@@ -119,6 +119,8 @@ return {
       -- Git
       { '<leader>gb', function() Snacks.picker.git_branches() end,          desc = 'Git Branches' },
       { '<leader>gl', function() Snacks.picker.git_log() end,               desc = 'Git Log' },
+      -- Marks
+      { '<leader>sm', function() Snacks.picker.marks() end,                 desc = 'Marks' },
     }
   }
 }
