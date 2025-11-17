@@ -20,7 +20,9 @@ return {
 
             return '󰛢 ' .. cur_index .. '/' .. indexes
           end,
-          cond = package.loaded['marlin']
+          cond = function()
+            return package.loaded['marlin']
+          end
         } },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
