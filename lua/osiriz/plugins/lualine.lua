@@ -17,8 +17,17 @@ return {
               return ''
             end
             local cur_index = require('marlin').cur_index()
+            local status = ''
 
-            return '󰛢 ' .. cur_index .. '/' .. indexes
+            for index = 1, indexes do
+              if index == cur_index then
+                status = status .. ' [' .. index .. ']'
+              else
+                status = status .. ' ' .. index
+              end
+            end
+
+            return '󰛢' .. status
           end,
           cond = function()
             return package.loaded['marlin'] ~= false
