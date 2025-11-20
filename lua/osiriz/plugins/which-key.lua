@@ -4,7 +4,6 @@ return {
     event = { 'VeryLazy' },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'echasnovski/mini.icons',
     },
     opts = {
       preset = 'modern',

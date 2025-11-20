@@ -11,8 +11,6 @@ local packages = {
   'isort',
   'lua-language-server',
   'python-lsp-server',
-  'sqlfmt',
-  'sqlls',
   'tinymist',
   'typescript-language-server',
 }
