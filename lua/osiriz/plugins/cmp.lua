@@ -97,6 +97,7 @@ return {
         },
         mapping = mapping,
         formatting = {
+          fields = { 'abbr', 'kind', 'menu' },
           format = lspkind.cmp_format({
             mode = 'symbol_text',
             menu = ({
