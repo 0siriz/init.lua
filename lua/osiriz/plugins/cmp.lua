@@ -10,15 +10,12 @@ return {
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-emoji',
       'lukas-reineke/cmp-under-comparator',
-      'onsails/lspkind.nvim',
     },
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
-      local lspkind = require('lspkind')
 
       require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -72,6 +69,40 @@ return {
         }),
       }
 
+      local kind_icons = {
+        Text = "",
+        Method = "󰆧",
+        Function = "󰊕",
+        Constructor = "",
+        Field = "󰇽",
+        Variable = "󰂡",
+        Class = "󰠱",
+        Interface = "",
+        Module = "",
+        Property = "󰜢",
+        Unit = "",
+        Value = "󰎠",
+        Enum = "",
+        Keyword = "󰌋",
+        Snippet = "",
+        Color = "󰏘",
+        File = "󰈙",
+        Reference = "",
+        Folder = "󰉋",
+        EnumMember = "",
+        Constant = "󰏿",
+        Struct = "",
+        Event = "",
+        Operator = "󰆕",
+        TypeParameter = "󰅲",
+      }
+
+      local menu_sources = {
+        nvim_lsp = "LSP",
+        luasnip = "LuaSnip",
+        emoji = "Emoji"
+      }
+
       cmp.setup({
         sources = {
           { name = 'lazydev',                group_index = 0 },
@@ -97,16 +128,16 @@ return {
         },
         mapping = mapping,
         formatting = {
-          fields = { 'abbr', 'kind', 'menu' },
-          format = lspkind.cmp_format({
-            mode = 'symbol_text',
-            menu = ({
-              buffer = '[Buffer]',
-              nvim_lsp = '[LSP]',
-              luasnip = '[LuaSnip]',
-              nvim_lua = '[Lua]',
-            }),
-          }),
+          fields = { 'abbr', 'icon', 'kind', 'menu' },
+          format = function(entry, vim_item)
+            -- Icon
+            vim_item.icon = kind_icons[vim_item.kind]
+
+            -- Menu
+            vim_item.menu = string.format("[%s]", menu_sources[entry.source.name] or entry.source.name)
+
+            return vim_item
+          end,
         },
         view = {
           entries = { name = 'custom', selection_order = 'near_cursor' },
@@ -127,12 +158,6 @@ return {
         formatting = {
           fields = { 'abbr' },
         },
-      })
-      cmp.setup.cmdline({ '/', '?' }, {
-        sources = {
-          { name = 'buffer' },
-        },
-        mapping = mapping,
       })
 
       vim.lsp.config('*', {
