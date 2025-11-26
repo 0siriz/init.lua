@@ -10,7 +10,6 @@ return {
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-emoji',
       'lukas-reineke/cmp-under-comparator',
     },
     config = function()
@@ -100,7 +99,6 @@ return {
       local menu_sources = {
         nvim_lsp = "LSP",
         luasnip = "LuaSnip",
-        emoji = "Emoji"
       }
 
       cmp.setup({
@@ -109,7 +107,6 @@ return {
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
-          { name = 'emoji' },
         },
         snippet = {
           expand = function(args)
