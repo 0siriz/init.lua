@@ -116,6 +116,7 @@ return {
       { '<leader>sS', function() Snacks.picker.lsp_workspace_symbols() end, desc = 'LSP Workspace Symbols' },
       -- Diagnostics
       { '<leader>sd', function() Snacks.picker.diagnostics() end,           desc = 'Diagnostics' },
+      { '<leader>sD', function() Snacks.picker.diagnostics_buffer() end,    desc = 'Buffer Diagnostics' },
       -- Git
       { '<leader>gb', function() Snacks.picker.git_branches() end,          desc = 'Git Branches' },
       { '<leader>gl', function() Snacks.picker.git_log() end,               desc = 'Git Log' },
