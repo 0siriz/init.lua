@@ -7,6 +7,9 @@ return {
         search = { enabled = true },
         char = { enabled = true },
       },
+      prompt = {
+        prefix = { { ' ', 'FlashPromptIcon' } }
+      },
     },
     keys = {
       { 's',     function() require('flash').jump() end,              mode = { 'n', 'x', 'o' }, desc = 'Flash' },

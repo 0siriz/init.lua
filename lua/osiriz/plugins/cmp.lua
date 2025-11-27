@@ -60,6 +60,7 @@ return {
             fallback()
           end
         end, { 'i', 's', 'c' }),
+        ['<C-e>'] = cmp.mapping.close(),
         ['<C-b>'] = cmp.mapping({
           i = cmp.mapping.scroll_docs(-4),
         }),
