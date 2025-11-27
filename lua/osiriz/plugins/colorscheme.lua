@@ -17,6 +17,7 @@ return {
           CmpItemKindVariableIcon = { link = 'CmpItemKindVariable' },
 
           -- Fidget
+          FidgetDone = { fg = 'pine' },
           FidgetGroupSeparator = { fg = 'subtle' },
           FidgetNormal = { fg = 'subtle' },
           FidgetGroup = { link = 'Title' },

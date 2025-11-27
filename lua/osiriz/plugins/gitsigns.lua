@@ -32,6 +32,7 @@ return {
           if vim.wo.diff then
             vim.cmd.normal({ ']c', bang = true })
           else
+            ---@diagnostic disable-next-line: param-type-mismatch
             gitsigns.nav_hunk('next')
           end
         end, 'Next Hunk')
@@ -40,11 +41,14 @@ return {
           if vim.wo.diff then
             vim.cmd.normal({ '[c', bang = true })
           else
+            ---@diagnostic disable-next-line: param-type-mismatch
             gitsigns.nav_hunk('prev')
           end
         end, 'Previous Hunk')
 
+        ---@diagnostic disable-next-line: param-type-mismatch
         map('n', ']H', function() gitsigns.nav_hunk('last') end, 'Last Hunk')
+        ---@diagnostic disable-next-line: param-type-mismatch
         map('n', '[H', function() gitsigns.nav_hunk('first') end, 'First Hunk')
         map('n', '<leader>gs', gitsigns.stage_hunk, 'Git Stage Hunk')
         map('v', '<leader>gs', function() gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end,

@@ -4,8 +4,17 @@ return {
     tag = 'v1.6.1',
     event = { 'VeryLazy' },
     opts = {
+      progress = {
+        display = {
+          done_style = 'FidgetDone',
+          progress_icon = { 'dots' },
+          group_style = 'FidgetGroup',
+          icon_style = 'FidgetIcon',
+        },
+      },
       notification = {
         view = {
+          group_separator = '───',
           group_separator_hl = 'FidgetGroupSeparator'
         },
         window = {
@@ -15,7 +24,7 @@ return {
         configs = {
           default = {
             name = 'Notifications',
-            icon = '❰❰',
+            icon = ' ',
             ttl = 5,
             group_style = 'FidgetGroup',
             icon_style = 'FidgetIcon',
@@ -34,7 +43,7 @@ return {
           },
           mason = {
             name = 'Mason',
-            icon = ' ',
+            icon = ' ',
             ttl = 5,
             group_style = 'FidgetGroup',
             icon_style = 'FidgetIcon',
