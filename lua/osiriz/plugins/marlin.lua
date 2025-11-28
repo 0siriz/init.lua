@@ -56,9 +56,9 @@ return {
             win = {
               input = {
                 keys = {
-                  ['<C-k>'] = { 'marlin_up', mode = { 'n', 'i' }, desc = "Move marlin up" },
-                  ['<C-j>'] = { 'marlin_down', mode = { 'n', 'i' }, desc = "Move marlin down" },
-                  ['<C-d>'] = { 'marlin_delete', mode = { 'n', 'i' }, desc = "Marlin delete" },
+                  ['<C-k>'] = { 'marlin_up', mode = { 'n', 'i' }, desc = 'Move marlin up' },
+                  ['<C-j>'] = { 'marlin_down', mode = { 'n', 'i' }, desc = 'Move marlin down' },
+                  ['<C-d>'] = { 'marlin_delete', mode = { 'n', 'i' }, desc = 'Marlin delete' },
                 },
               },
             },
