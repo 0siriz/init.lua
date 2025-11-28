@@ -3,9 +3,8 @@ return {
     'nvim-treesitter/nvim-treesitter',
     main = 'nvim-treesitter.configs',
     build = ':TSUpdate',
-    event = { 'VeryLazy' },
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects'
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     opts = {
       ensure_installed = {
