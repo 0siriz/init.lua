@@ -13,6 +13,16 @@ return {
             { icon = ' ', key = 'n', desc = 'New File', action = ':ene | startinsert' },
             { icon = ' ', key = 'r', desc = 'Recent Files', action = function() Snacks.picker.recent() end },
             { icon = ' ', key = 'e', desc = 'File Explorer', action = function() Snacks.explorer() end },
+            {
+              icon = ' ',
+              key = 'c',
+              desc = 'Config',
+              action = function()
+                Snacks.picker.files({
+                  cwd = vim.fn.stdpath('config')
+                })
+              end
+            },
             { icon = '󰒲 ', key = 'L', desc = 'Lazy', action = function() require('lazy').home() end, enabled = package.loaded.lazy ~= nil },
             { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
           },
@@ -34,7 +44,7 @@ return {
           {
             section = 'header',
             enabled = function()
-              return vim.o.lines >= 32
+              return vim.o.lines >= 34
             end
           },
           { section = 'keys', gap = 1, padding = 1 },
@@ -55,15 +65,6 @@ return {
       },
       picker = {
         enabled = true,
-        sources = {
-          explorer = {
-            layout = {
-              layout = {
-                position = 'right',
-              },
-            },
-          },
-        },
         win = {
           input = {
             keys = {
@@ -101,7 +102,23 @@ return {
     },
     keys = {
       -- Explorer
-      { '<leader>e',  function() Snacks.explorer() end,                     desc = 'File Explorer' },
+      {
+        '<leader>e',
+        function()
+          local explorer_pickers = Snacks.picker.get({ source = 'explorer' })
+          for _, v in pairs(explorer_pickers) do
+            if v:is_focused() then
+              v:close()
+            else
+              v:focus()
+            end
+          end
+          if #explorer_pickers == 0 then
+            Snacks.picker.explorer()
+          end
+        end,
+        desc = 'File Explorer'
+      },
       -- Find
       { '<leader>fb', function() Snacks.picker.buffers() end,               desc = 'Buffers' },
       { '<leader>ff', function() Snacks.picker.files() end,                 desc = 'Files' },
