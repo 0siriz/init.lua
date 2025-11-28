@@ -16,18 +16,6 @@ return {
           CmpItemKindSnippetIcon = { link = 'CmpItemKindSnippet' },
           CmpItemKindVariableIcon = { link = 'CmpItemKindVariable' },
 
-          -- Fidget
-          FidgetDone = { fg = 'pine' },
-          FidgetGroupSeparator = { fg = 'subtle' },
-          FidgetNormal = { fg = 'subtle' },
-          FidgetGroup = { link = 'Title' },
-          FidgetIcon = { link = 'Special' },
-          FidgetAnnote = { link = 'Question' },
-          FidgetDebug = { fg = 'muted' },
-          FidgetInfo = { fg = 'foam' },
-          FidgetWarn = { fg = 'gold' },
-          FidgetError = { fg = 'love' },
-
           -- Flash
           FlashBackdrop = { fg = 'subtle' },
           FlashPromptIcon = { fg = 'gold' },

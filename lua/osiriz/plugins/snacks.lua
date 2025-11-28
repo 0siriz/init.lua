@@ -48,7 +48,11 @@ return {
       image = { enabled = false },
       input = { enabled = true },
       indent = { enabled = true },
-      notifier = { enabled = false },
+      notifier = {
+        enabled = true,
+        margin = { bottom = 1 },
+        top_down = false,
+      },
       picker = {
         enabled = true,
         sources = {
