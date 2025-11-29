@@ -119,6 +119,16 @@ return {
         end,
         desc = 'File Explorer'
       },
+      {
+        '<leader>E',
+        function()
+          local explorer_pickers = Snacks.picker.get({ source = 'explorer' })
+          for _, v in pairs(explorer_pickers) do
+            v:close()
+          end
+        end,
+        desc = 'Close File Explorer'
+      },
       -- Find
       { '<leader>fb', function() Snacks.picker.buffers() end,               desc = 'Buffers' },
       { '<leader>ff', function() Snacks.picker.files() end,                 desc = 'Files' },

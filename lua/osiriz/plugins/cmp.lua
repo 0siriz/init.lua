@@ -7,7 +7,6 @@ return {
       'rafamadriz/friendly-snippets',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-cmdline',
       'lukas-reineke/cmp-under-comparator',
