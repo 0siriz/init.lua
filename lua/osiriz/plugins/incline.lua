@@ -6,6 +6,9 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     opts = {
+      hide = {
+        only_win = true,
+      },
       window = {
         padding = 0,
         margin = { horizontal = 0, vertical = 0 },
@@ -33,15 +36,12 @@ return {
           ft_icon and
           { ' ', ft_icon, ' ', guibg = ft_color, guifg = require('incline.helpers').contrast_color(ft_color) } or '',
           ' ',
-          { filename, gui = modified and 'italic' or nil },
+          { filename, modified and '󱙃' or '' },
           ' ',
           marlin_status and { marlin_status, ' ' } or '',
         }
         return res
       end,
     },
-    keys = {
-      { '<leader>ti', function() require('incline').toggle() end, desc = 'Toggle incline' }
-    }
   },
 }

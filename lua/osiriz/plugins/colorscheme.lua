@@ -6,6 +6,9 @@ return {
       require('rose-pine').setup({
         variant = 'main',
         dark_variant = 'main',
+        styles = {
+          transparency = true,
+        },
         highlight_groups = {
           -- nvim-cmp
           CmpItemKindIcon = { link = 'CmpItemKind' },

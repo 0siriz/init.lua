@@ -6,10 +6,22 @@ return {
       options = {
         theme = 'auto',
         globalstatus = true,
+        component_separators = '│',
+        section_separators = { left = '', right = '' },
       },
       sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_a = { {
+          'mode',
+          separator = { left = '', right = '▌' },
+        } },
+        lualine_b = { {
+          'filename',
+          file_status = true,
+          symbols = {
+            modified = '󱙃',
+            readonly = '󰌾',
+          },
+        }, 'branch', 'diff', 'diagnostics' },
         lualine_c = { {
           function()
             local indexes = require('marlin').num_indexes()
@@ -33,9 +45,12 @@ return {
             return package.loaded['marlin'] ~= false
           end
         } },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' },
+        lualine_x = {},
+        lualine_y = { 'filetype', 'progress' },
+        lualine_z = { {
+          'location',
+          separator = { left = '▐', right = '' },
+        } },
       },
     },
   },
