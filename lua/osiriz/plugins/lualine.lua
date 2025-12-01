@@ -42,7 +42,7 @@ return {
             return '󰛢' .. status
           end,
           cond = function()
-            return package.loaded['marlin'] ~= false
+            return package.loaded['marlin'] ~= nil
           end
         } },
         lualine_x = {},
