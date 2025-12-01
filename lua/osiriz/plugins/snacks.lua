@@ -27,7 +27,7 @@ return {
             { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
           },
           header = table.concat({
-            [[⠰⠤⢤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⡤⠤⠀]],
+            [[⠰⠤⢤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⡤⠤⠆]],
             [[⠀⢰⣤⣤⣄⣉⣉⠉⠛⠛⠛⠒⠒⠒⠒⠒⠒⠛⠛⠛⠉⣉⣉⣠⣤⣤⠆⠀]],
             [[⠀⠀⠛⠛⠛⠻⠿⠿⠿⠿⠿⠷⠶⠶⠶⠶⠾⠿⠿⠿⠿⠿⠿⠛⠛⠋⠀⠀]],
             [[⠀⠀⠀⠀⣶⣶⣶⠀⠀⠀⠀⠀⠀⣼⣧⠀⠀⠀⠀⠀⠀⣶⣶⣶⠀⠀⠀⠀]],
@@ -105,33 +105,7 @@ return {
     },
     keys = {
       -- Explorer
-      {
-        '<leader>e',
-        function()
-          local explorer_pickers = Snacks.picker.get({ source = 'explorer' })
-          for _, v in pairs(explorer_pickers) do
-            if v:is_focused() then
-              v:close()
-            else
-              v:focus()
-            end
-          end
-          if #explorer_pickers == 0 then
-            Snacks.picker.explorer()
-          end
-        end,
-        desc = 'File Explorer'
-      },
-      {
-        '<leader>E',
-        function()
-          local explorer_pickers = Snacks.picker.get({ source = 'explorer' })
-          for _, v in pairs(explorer_pickers) do
-            v:close()
-          end
-        end,
-        desc = 'Close File Explorer'
-      },
+      { '<leader>e',  function() Snacks.picker.explorer() end,              desc = 'File Explorer' },
       -- Find
       { '<leader>fb', function() Snacks.picker.buffers() end,               desc = 'Buffers' },
       { '<leader>ff', function() Snacks.picker.files() end,                 desc = 'Files' },
