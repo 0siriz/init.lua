@@ -14,7 +14,7 @@ return {
         'gopls',
         'html-lsp',
         'isort',
-        'lua-language-server',
+        { 'lua-language-server', version = '3.15.0' },
         'python-lsp-server',
         'tinymist',
         'typescript-language-server',
