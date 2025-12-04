@@ -16,6 +16,7 @@ vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldtext = ''
 vim.o.winborder = 'rounded'
+vim.o.exrc = true
 
 vim.wo.number = true
 
