@@ -18,6 +18,7 @@ return {
         'python-lsp-server',
         'tinymist',
         'typescript-language-server',
+        'tree-sitter-cli',
       },
       auto_update = true,
       run_on_start = true,
