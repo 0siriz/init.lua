@@ -64,7 +64,6 @@ return {
         },
         {
           'lua-language-server',
-          version = '3.15.0',
           condition = function()
             return not binexists('lua-language-server')
           end
