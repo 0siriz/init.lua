@@ -1,4 +1,4 @@
-function binexists(bin)
+function Binexists(bin)
   return vim.fn.executable(bin) == 1
 end
 
@@ -11,85 +11,86 @@ return {
         {
           'autopep8',
           condition = function()
-            return not binexists('autopep8') and binexists('pip')
+            return not Binexists('autopep8') and Binexists('pip')
           end
         },
         {
           'bash-language-server',
           condition = function()
-            return not binexists('bash-language-server') and binexists('npm')
+            return not Binexists('bash-language-server') and Binexists('npm')
           end
         },
         {
           'clang-format',
           condition = function()
-            return not binexists('clang-format') and binexists('pip')
+            return not Binexists('clang-format') and Binexists('pip')
           end
         },
         {
           'clangd',
           condition = function()
-            return not binexists('clangd')
+            return not Binexists('clangd')
           end
         },
         {
           'docker-language-server',
           condition = function()
-            return not binexists('docker-language-server')
+            return not Binexists('docker-language-server')
           end
         },
         {
           'goimports',
           condition = function()
-            return not binexists('goimports') and binexists('go')
+            return not Binexists('goimports') and Binexists('go')
           end
         },
         {
           'gopls',
           condition = function()
-            return not binexists('gopls') and binexists('go')
+            return not Binexists('gopls') and Binexists('go')
           end
         },
         {
           'html-lsp',
           condition = function()
-            return not binexists('vscode-html-language-server') and binexists('npm')
+            return not Binexists('vscode-html-language-server') and Binexists('npm')
           end
         },
         {
           'isort',
           condition = function()
-            return not binexists('isort') and not binexists('pip')
+            return not Binexists('isort') and not Binexists('pip')
           end
         },
         {
           'lua-language-server',
+          version = '3.16.4', -- Pinned due to lazydev.nvim issue with global vim
           condition = function()
-            return not binexists('lua-language-server')
+            return not Binexists('lua-language-server')
           end
         },
         {
           'python-lsp-server',
           condition = function()
-            return not binexists('pylsp') and binexists('pip')
+            return not Binexists('pylsp') and Binexists('pip')
           end
         },
         {
           'tinymist',
           condition = function()
-            return not binexists('tinymist')
+            return not Binexists('tinymist')
           end
         },
         {
           'typescript-language-server',
           condition = function()
-            return not binexists('typescript-language-server') and binexists('npm')
+            return not Binexists('typescript-language-server') and Binexists('npm')
           end
         },
         {
           'tree-sitter-cli',
           condition = function()
-            return not binexists('tree-sitter')
+            return not Binexists('tree-sitter')
           end
         },
       },
