@@ -15,6 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup(
   {
+    {
+      'folke/lazy.nvim',
+      version = "*",
+    },
     { import = 'osiriz.plugins' },
     {
       'folke/lazydev.nvim',
@@ -25,7 +29,7 @@ require('lazy').setup(
           { path = 'snacks.nvim',        words = { 'Snacks' } }
         },
       },
-    }
+    },
   },
   {
     checker = {
