@@ -14,7 +14,7 @@ return {
         { '<leader>m', group = 'Marlin' },
         { '<leader>r', group = 'Rename' },
         { '<leader>s', group = 'Search' },
-        { '<leader>t', group = 'Toggle' },
+        { '<leader>h', group = 'Shelter' },
       }
     },
   },
