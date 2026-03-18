@@ -140,7 +140,9 @@ return {
         end,
         desc = 'Marks'
       },
-      { '<leader>sM', function() Snacks.picker.marks() end, desc = 'All Marks' }
+      { '<leader>sM', function() Snacks.picker.marks() end,     desc = 'All Marks' },
+      -- Registers
+      { '<leader>sr', function() Snacks.picker.registers() end, desc = 'Registers' },
     }
   }
 }
