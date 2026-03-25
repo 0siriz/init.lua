@@ -34,6 +34,10 @@ function M.edit_register(reg)
   vim.keymap.set('n', '<Esc>', function()
     vim.api.nvim_win_close(win, true)
   end, { noremap = true, silent = true, buffer = buf })
+
+  vim.keymap.set('n', 'q', function()
+    vim.api.nvim_win_close(win, true)
+  end, { noremap = true, silent = true, buffer = buf })
 end
 
 return M
