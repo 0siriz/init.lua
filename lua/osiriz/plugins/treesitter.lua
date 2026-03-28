@@ -5,7 +5,7 @@ return {
     branch = 'main',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = {
+      parsers = {
         'bash',
         'zsh',
         'c',
@@ -23,20 +23,24 @@ return {
     config = function(_, opts)
       require('nvim-treesitter').setup()
 
-      if opts.ensure_installed and #opts.ensure_installed > 0 then
-        require('nvim-treesitter').install(opts.ensure_installed)
-        for _, parser in ipairs(opts.ensure_installed) do
-          local filetypes = parser
-          vim.treesitter.language.register(parser, filetypes)
+      for _, parser in ipairs(opts.parsers) do
+        require('nvim-treesitter').install(parser)
+      end
 
-          vim.api.nvim_create_autocmd({ 'FileType' }, {
-            pattern = filetypes,
-            callback = function(event)
-              vim.treesitter.start(event.buf, parser)
-            end,
-          })
+      local patterns = {}
+      for _, parser in ipairs(opts.parsers) do
+        local parser_patterns = vim.treesitter.language.get_filetypes(parser)
+        for _, pp in pairs(parser_patterns) do
+          table.insert(patterns, pp)
         end
       end
+
+      vim.api.nvim_create_autocmd({ 'FileType' }, {
+        pattern = patterns,
+        callback = function()
+          vim.treesitter.start()
+        end
+      })
     end,
   },
   {
