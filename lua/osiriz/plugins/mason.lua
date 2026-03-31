@@ -59,7 +59,7 @@ return {
         {
           'isort',
           condition = function()
-            return not Binexists('isort') and not Binexists('pip')
+            return not Binexists('isort') and Binexists('pip')
           end
         },
         {
