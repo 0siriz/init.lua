@@ -1,8 +1,8 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
     branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
     opts = {
       parsers = {

@@ -1,11 +1,9 @@
-function Binexists(bin)
-  return vim.fn.executable(bin) == 1
-end
+local Binexists = require('osiriz.mods.utils').binexists
 
 return {
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    dependencies = { { 'mason-org/mason.nvim', opts = {} } },
+    dependencies = { { 'mason-org/mason.nvim', opts = {}, }, },
     opts = {
       ensure_installed = {
         {
@@ -85,12 +83,6 @@ return {
           'typescript-language-server',
           condition = function()
             return not Binexists('typescript-language-server') and Binexists('npm')
-          end
-        },
-        {
-          'tree-sitter-cli',
-          condition = function()
-            return not Binexists('tree-sitter')
           end
         },
       },
