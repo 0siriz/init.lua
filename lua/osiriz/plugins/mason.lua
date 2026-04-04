@@ -85,6 +85,12 @@ return {
             return not Binexists('typescript-language-server') and Binexists('npm')
           end
         },
+        {
+          'prettypst',
+          condition = function()
+            return not Binexists('prettypst') and Binexists('cargo')
+          end
+        },
       },
       auto_update = true,
       run_on_start = true,
