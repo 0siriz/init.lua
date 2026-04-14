@@ -66,7 +66,7 @@ return {
         desc = 'inner class',
       },
       {
-        'af',
+        'am',
         function()
           require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects')
         end,
@@ -74,7 +74,7 @@ return {
         desc = 'function',
       },
       {
-        'if',
+        'im',
         function()
           require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects')
         end,
@@ -116,23 +116,31 @@ return {
       {
         ']c',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next class start',
       },
       {
-        ']f',
+        ']m',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next function start',
       },
       {
+        ']o',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_start('@loop.outer', 'textobjects')
+        end,
+        mode = { 'n' },
+        desc = 'Next loop start',
+      },
+      {
         ']a',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_start('@parameter.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_start('@parameter.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next argument start',
@@ -140,23 +148,31 @@ return {
       {
         ']C',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next class end',
       },
       {
-        ']F',
+        ']M',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next function end',
       },
       {
+        ']O',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_end('@loop.outer', 'textobjects')
+        end,
+        mode = { 'n' },
+        desc = 'Next loop end',
+      },
+      {
         ']A',
         function()
-          require('nvim-treesitter-textobjects.move').goto_next_end('@parameter.outer')
+          require('nvim-treesitter-textobjects.move').goto_next_end('@parameter.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Next argument end',
@@ -164,23 +180,31 @@ return {
       {
         '[c',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous class start',
       },
       {
-        '[f',
+        '[m',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous function start',
       },
       {
+        '[o',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@loop.outer', 'textobjects')
+        end,
+        mode = { 'n' },
+        desc = 'Previous loop start',
+      },
+      {
         '[a',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_start('@parameter.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@parameter.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous argument start',
@@ -188,7 +212,7 @@ return {
       {
         '[C',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous class end',
@@ -196,15 +220,23 @@ return {
       {
         '[F',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous function end',
       },
       {
+        '[O',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@loop.outer', 'textobjects')
+        end,
+        mode = { 'n' },
+        desc = 'Previous loop end',
+      },
+      {
         '[A',
         function()
-          require('nvim-treesitter-textobjects.move').goto_previous_end('@parameter.outer')
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@parameter.outer', 'textobjects')
         end,
         mode = { 'n' },
         desc = 'Previous argument end',
