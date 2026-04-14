@@ -62,7 +62,6 @@ return {
         },
         {
           'lua-language-server',
-          version = '3.16.4', -- Pinned due to lazydev.nvim issue with global vim
           condition = function()
             return not Binexists('lua-language-server')
           end
