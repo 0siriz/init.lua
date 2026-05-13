@@ -9,6 +9,7 @@ vim.filetype.add({
     ['compose.yml'] = 'yaml.docker-compose',
     ['.env'] = 'dotenv',
     ['env'] = 'dotenv',
+    ['tmpl'] = 'gotmpl'
   },
   pattern = {
     ['.?env.*'] = 'dotenv',
