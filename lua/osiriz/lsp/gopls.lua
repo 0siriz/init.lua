@@ -66,6 +66,7 @@ local function get_root_dir(fname)
   return vim.fs.root(fname, 'go.work') or vim.fs.root(fname, 'go.mod') or vim.fs.root(fname, '.git')
 end
 
+---@type vim.lsp.Config
 return {
   cmd = { 'gopls' },
   filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
@@ -76,4 +77,11 @@ return {
 
     on_dir(get_root_dir(fname))
   end,
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+  },
 }
