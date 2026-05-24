@@ -49,6 +49,18 @@ return {
           end
         },
         {
+          'golangci-lint',
+          condition = function()
+            return not Binexists('golangci-lint')
+          end
+        },
+        {
+          'golangci-lint-langserver',
+          condition = function()
+            return not Binexists('golangci-lint-langserver')
+          end
+        },
+        {
           'html-lsp',
           condition = function()
             return not Binexists('vscode-html-language-server') and Binexists('npm')
