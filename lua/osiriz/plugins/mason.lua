@@ -9,19 +9,19 @@ return {
         {
           'autopep8',
           condition = function()
-            return not Binexists('autopep8') and Binexists('pip')
+            return not Binexists('autopep8')
           end
         },
         {
           'bash-language-server',
           condition = function()
-            return not Binexists('bash-language-server') and Binexists('npm')
+            return not Binexists('bash-language-server')
           end
         },
         {
           'clang-format',
           condition = function()
-            return not Binexists('clang-format') and Binexists('pip')
+            return not Binexists('clang-format')
           end
         },
         {
@@ -39,13 +39,13 @@ return {
         {
           'goimports',
           condition = function()
-            return not Binexists('goimports') and Binexists('go')
+            return not Binexists('goimports')
           end
         },
         {
           'gopls',
           condition = function()
-            return not Binexists('gopls') and Binexists('go')
+            return not Binexists('gopls')
           end
         },
         {
@@ -63,13 +63,13 @@ return {
         {
           'html-lsp',
           condition = function()
-            return not Binexists('vscode-html-language-server') and Binexists('npm')
+            return not Binexists('vscode-html-language-server')
           end
         },
         {
           'isort',
           condition = function()
-            return not Binexists('isort') and Binexists('pip')
+            return not Binexists('isort')
           end
         },
         {
@@ -79,9 +79,15 @@ return {
           end
         },
         {
+          'openscad-lsp',
+          condition = function()
+            return not Binexists("openscad-lsp")
+          end
+        },
+        {
           'python-lsp-server',
           condition = function()
-            return not Binexists('pylsp') and Binexists('pip')
+            return not Binexists('pylsp')
           end
         },
         {
@@ -93,13 +99,13 @@ return {
         {
           'typescript-language-server',
           condition = function()
-            return not Binexists('typescript-language-server') and Binexists('npm')
+            return not Binexists('typescript-language-server')
           end
         },
         {
           'prettypst',
           condition = function()
-            return not Binexists('prettypst') and Binexists('cargo')
+            return not Binexists('prettypst')
           end
         },
       },
